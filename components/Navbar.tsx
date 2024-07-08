@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import MobileNav from "./MobileNav";
 
 function Navbar() {
   return (
-    <nav className="flex-between fixed z-50 w-full bg-dark-1 px-6 py-4 lg:px-10 ">
+    <nav className="  flex-between fixed z-50 w-full bg-dark-1 px-6 py-4 lg:px-10 ">
       <Link href="/" className="flex items-center gap-1 ">
         <Image
           src="/icons/logo.svg"
@@ -17,7 +18,10 @@ function Navbar() {
           ReuVi
         </p>
       </Link>
-      <div className="flex-between gap-5 ">{/* clerk */}</div>
+      <div className=" flex-between gap-5 ">
+        {/* clerk management */}
+        <MobileNav />
+      </div>
     </nav>
   );
 }
