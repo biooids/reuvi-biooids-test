@@ -9,9 +9,9 @@ import MeetingModal from "./MeetingModal";
 import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
 import { useUser } from "@clerk/nextjs";
 import Loader from "./Loader";
-import { useToast } from "./ui/use-toast";
 import { Textarea } from "./ui/textarea";
-import DatePicker from "react-datepicker";
+import ReactDatePicker from "react-datepicker";
+import { useToast } from "./ui/use-toast";
 import { Input } from "./ui/input";
 
 const initialValues = {
@@ -27,8 +27,8 @@ const MeetingTypeList = () => {
   >(undefined);
   const [values, setValues] = useState(initialValues);
   const [callDetail, setCallDetail] = useState<Call>();
-  const { user } = useUser();
   const client = useStreamVideoClient();
+  const { user } = useUser();
   const { toast } = useToast();
 
   const createMeeting = async () => {
@@ -41,7 +41,6 @@ const MeetingTypeList = () => {
       const id = crypto.randomUUID();
       const call = client.call("default", id);
       if (!call) throw new Error("Failed to create meeting");
-
       const startsAt =
         values.dateTime.toISOString() || new Date(Date.now()).toISOString();
       const description = values.description || "Instant Meeting";
@@ -122,7 +121,7 @@ const MeetingTypeList = () => {
             <label className="text-base font-normal leading-[22.4px] text-sky-2">
               Select Date and Time
             </label>
-            <DatePicker
+            <ReactDatePicker
               selected={values.dateTime}
               onChange={(date) => setValues({ ...values, dateTime: date! })}
               showTimeSelect
