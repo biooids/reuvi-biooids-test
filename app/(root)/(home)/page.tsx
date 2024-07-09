@@ -1,4 +1,5 @@
 "use client";
+import MeetingTypeList from "@/components/MeetingTypeList";
 import { useState, useEffect } from "react";
 
 const Home = () => {
@@ -37,6 +38,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <MeetingTypeList />
     </section>
   );
 };
