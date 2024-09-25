@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "ReuVi",
   description: "Virtual meeting app for FFWPU",
   icons: {
-    icon: "/icons/logo.svg",
+    icon: "/images/logo.png",
   },
 };
 
@@ -27,7 +27,7 @@ export default function RootLayout({
         appearance={{
           layout: {
             socialButtonsVariant: "iconButton",
-            logoImageUrl: "/icons/yoom-logo.svg",
+            logoImageUrl: "/images/logo.png",
           },
           variables: {
             colorText: "#fff",
